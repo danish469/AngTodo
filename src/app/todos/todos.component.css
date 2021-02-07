@@ -40,7 +40,7 @@
 .todo-submit {
   display: block;
   /* width: 100%; */
-  /* max-width: 200px; */
+  /* max-width: 50; */
   appearance: none;
   border: none;
   outline: none;
@@ -50,7 +50,7 @@
   color: #2c3e50;
   margin: 15px auto;
 
-  padding: 10px 15px;
-  font-size: 20px;
-  font-weight: 700;
+  padding: 5px 10px;
+  font-size: 15px;
+  font-weight: 500;
 }
