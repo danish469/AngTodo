@@ -5,13 +5,14 @@
       name="inputTodo"
       placeholder="Enter todo..."
       class="todo-input"
-      [(ngModel)]="inputTodo"
+      [(ngModel)]=" inputTodo "
     />
     <button
       mat-raised-button
       type="submit"
       value="Add Todo"
       class="todo-submit"
+      (click)=" openSnackBar('Item added','Dismiss')"
     >
       Add To-do
     </button>

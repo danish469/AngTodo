@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Todo } from "../models/Todo";
-
+import { MatSnackBar } from "@angular/material/snack-bar";
 @Component({
   selector: "app-todos",
   templateUrl: "./todos.component.html",
@@ -11,7 +11,7 @@ export class TodosComponent implements OnInit {
 
   inputTodo: string = "";
 
-  constructor() {}
+  constructor(private snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
     this.todos = [
@@ -36,6 +36,7 @@ export class TodosComponent implements OnInit {
 
   deleteTodo(id: number) {
     this.todos = this.todos.filter((v, i) => i !== id);
+    this.openSnackBar("Item deleted", "Dismiss");
   }
 
   addTodo() {
@@ -45,5 +46,8 @@ export class TodosComponent implements OnInit {
     });
 
     this.inputTodo = "";
+  }
+  openSnackBar(message, action) {
+    this.snackBar.open(message, action, { duration: 2000 });
   }
 }
